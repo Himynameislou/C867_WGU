@@ -16,5 +16,12 @@ Student::Student(){
 }
 
 Student::Student(string studenID, string fName, string lName, string email, int age, int* daysCourse){
-    
+    studentID = studenID;
+    firstName = fName;
+    lastName = lName;
+    email = email;
+    age = age;
+    numberDaysPerClass[0] = daysCourse[0];
+    numberDaysPerClass[1] = daysCourse[1];
+    numberDaysPerClass[2] = daysCourse[2];
 }
