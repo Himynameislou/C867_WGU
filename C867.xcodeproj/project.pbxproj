@@ -28,6 +28,7 @@
 		7A9141D02586BC8F002F77DF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7A9141D82586BD40002F77DF /* student.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = student.cpp; sourceTree = "<group>"; };
 		7A9141D92586BD40002F77DF /* student.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = student.hpp; sourceTree = "<group>"; };
+		7A9141DC2586C09C002F77DF /* degree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = degree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 				7A9141D02586BC8F002F77DF /* main.cpp */,
 				7A9141D82586BD40002F77DF /* student.cpp */,
 				7A9141D92586BD40002F77DF /* student.hpp */,
+				7A9141DC2586C09C002F77DF /* degree.h */,
 			);
 			path = C867;
 			sourceTree = "<group>";

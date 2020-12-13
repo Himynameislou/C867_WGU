@@ -41,6 +41,20 @@ public:
     void setAge(int age);
     void setDaysCourse(int* daysInCourse);
     void setDegreeProgram(DegreeProgram);
+    
+    //Print and Degree functions
+    void print();
+    void getDegreeProg(DegreeProgram);
+    
+    //Deconstructor
+    ~Student();
+private:
+    string studentID;
+    string firstName;
+    string lastName;
+    string email;
+    int age;
+    int numberDaysPerClass[3];
 };
 
 #endif /* student_hpp */
