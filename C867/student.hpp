@@ -44,10 +44,12 @@ public:
     
     //Print and Degree functions
     void print();
-    void getDegreeProg(DegreeProgram);
+    virtual DegreeProgram getDegreeProgram(DegreeProgram);
+    
     
     //Deconstructor
     ~Student();
+    
 private:
     string studentID;
     string firstName;
@@ -55,6 +57,7 @@ private:
     string email;
     int age;
     int numberDaysPerClass[3];
+    DegreeProgram DegreeProgram;
 };
 
 #endif /* student_hpp */
