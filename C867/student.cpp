@@ -75,3 +75,11 @@ void Student::setDaysCourse(int d0, int d1, int d2){
 void Student::setDegreeProgram(DegreeProgram degree){
     degreeP = degree;
 }
+
+void Student::print(){
+    
+}
+
+Student::~Student(){
+    
+}
