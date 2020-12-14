@@ -22,7 +22,7 @@ public:
     Student(); //Default Constructor
     
     //Student Array
-    Student(string studentID, string firstName, string lastName, string email, int age, int* days);
+    Student(string studentID, string firstName, string lastName, string email, int age, int* days, DegreeProgram);
     
     
     //Getters
@@ -44,7 +44,7 @@ public:
     
     //Print and Degree functions
     void print();
-    virtual DegreeProgram getDegreeProgram(DegreeProgram);
+    virtual DegreeProgram getDegreeProgram();
     
     
     //Deconstructor
@@ -57,7 +57,7 @@ private:
     string email;
     int age;
     int numberDaysPerClass[3];
-    DegreeProgram DegreeProgram;
+    DegreeProgram degreeP;
 };
 
 #endif /* student_hpp */
