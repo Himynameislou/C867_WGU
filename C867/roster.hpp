@@ -17,16 +17,19 @@ public:
     Roster(); //Default constructor for Roster
     
     // Setting Instance Variables from part D1
-    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degree);
+    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degree);
     
     void removeStudent(string studentID);
     void printCourseDays(string studentID);
-    void printInvalidEmails();
+    void printBEmails();
     void printDegreeType();
+    
+    ~Roster();
     
 private:
     //Array for Roster
     Student *ClassRosterArray[5];
+    
     
     
 };
