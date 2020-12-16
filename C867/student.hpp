@@ -22,7 +22,15 @@ public:
     Student(); //Default Constructor
     
     //Student Array
-    Student(string studentID, string firstName, string lastName, string email, int age, int* days, DegreeProgram);
+    Student(
+            string studentID,
+            string firstName,
+            string lastName,
+            string email,
+            int age,
+            int* days,
+            DegreeProgram
+            );
     
     
     //Getters
@@ -31,7 +39,7 @@ public:
     string getLastName();
     string getEmail();
     int getAge();
-    int *getNumberDays();
+    int* getNumberDays();
     
     //Setters
     void setStudentId(string studentID);
