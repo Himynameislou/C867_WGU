@@ -10,6 +10,7 @@
 #include <array>
 #include <stdio.h>
 #include "./student.hpp"
+#include "./degree.h"
 using namespace std;
 
 class Roster {
@@ -17,12 +18,15 @@ public:
     Roster(); //Default constructor for Roster
     
     // Setting Instance Variables from part D1
-    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degree);
-    
+    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degreeProgram);
     void removeStudent(string studentID);
-    void printCourseDays(string studentID);
-    void printBEmails();
-    void printDegreeType();
+    void pringAll();
+    void printAverageDaysInCourse(string studentID);
+    void printInvalidEmails();
+    void printByDegreeProgram(DegreeProgram degreeProgram);
+    
+    //adding index
+    int addingIndex;
     
     ~Roster();
     
