@@ -15,15 +15,21 @@ using namespace std;
 Student::Student(){
 }
 
-Student::Student(string studenID, string fName, string lName, string email, int age, int* daysCourse, enum DegreeProgram degree){
+Student::Student(
+                 string studenID,
+                 string fName,
+                 string lName,
+                 string email,
+                 int age,
+                 int* daysCourse,
+                 enum DegreeProgram degree)
+{
     studentID = studenID;
     firstName = fName;
     lastName = lName;
     email = email;
     age = age;
-    numberDaysPerClass[0] = daysCourse[0];
-    numberDaysPerClass[1] = daysCourse[1];
-    numberDaysPerClass[2] = daysCourse[2];
+    daysToComplete = daysCourse;
     setDegreeProgram(degree);
 }
 
@@ -43,8 +49,8 @@ string Student::getEmail(){
 int Student::getAge(){
     return age;
 }
-int *Student::getNumberDays(){
-    return numberDaysPerClass;
+int* Student::getNumberDays(){
+    return daysToComplete;
 }
 //insert degree program getter
 DegreeProgram Student::getDegreeProgram(){
@@ -67,10 +73,10 @@ void Student::setEmail(string email){
 void Student::setAge(int age){
     Student::age = age;
 }
-void Student::setDaysCourse(int d0, int d1, int d2){
-    Student::numberDaysPerClass[0] = d0;
-    Student::numberDaysPerClass[1] = d1;
-    Student::numberDaysPerClass[2] = d2;
+void Student::setDaysCourse(int* days){
+    for (int i = 0; i < 3; i++){
+        daysToComplete[i] = days[i];
+    }
 }
 void Student::setDegreeProgram(DegreeProgram degree){
     degreeP = degree;
