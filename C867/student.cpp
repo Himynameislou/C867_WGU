@@ -32,31 +32,6 @@ Student::Student(
     daysToComplete = daysCourse;
     setDegreeProgram(degree);
 }
-
-//Getters
-string Student::getStudentId(){
-    return studentID;
-}
-string Student::getFirstName(){
-    return firstName;
-}
-string Student::getLastName(){
-    return lastName;
-}
-string Student::getEmail(){
-    return email;
-}
-int Student::getAge(){
-    return age;
-}
-int* Student::getNumberDays(){
-    return daysToComplete;
-}
-//insert degree program getter
-DegreeProgram Student::getDegreeProgram(){
-    return degreeP;
-}
-
 //Setters
 void Student::setStudentId(string studenID){
     Student::studentID = studenID;
@@ -82,6 +57,31 @@ void Student::setDegreeProgram(DegreeProgram degree){
     degreeP = degree;
 }
 
+//Getters
+string Student::getStudentId(){
+    return studentID;
+}
+string Student::getFirstName(){
+    return firstName;
+}
+string Student::getLastName(){
+    return lastName;
+}
+string Student::getEmail(){
+    return email;
+}
+int Student::getAge(){
+    return age;
+}
+int* Student::getNumberDays(){
+    return daysToComplete;
+}
+//insert degree program getter
+DegreeProgram Student::getDegreeProgram(){
+    return degreeP;
+}
+
+//Print / Deconstruct
 void Student::print(){
     
 }
