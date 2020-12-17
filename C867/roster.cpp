@@ -9,6 +9,7 @@
 #include "student.hpp"
 #include "./degree.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
 const string studentData[] =
@@ -43,5 +44,15 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 
 //Removing Student
 void Roster::removeStudent(string studentID){
-    
+    for (int i = 0; i < 5; i++) {
+        if (ClassRosterArray[i] != nullptr) {
+            if (ClassRosterArray[i]->getStudentId() == studentID) {
+                delete ClassRosterArray[i];
+                ClassRosterArray[i] = nullptr;
+                cout << "Student: " << studentID << "removed." << endl;
+                return;
+            }
+        }
+    }
+    cout << "Student: " << studentID << " not found." << endl;
 }
