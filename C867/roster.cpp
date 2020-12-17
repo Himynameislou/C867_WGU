@@ -6,6 +6,8 @@
 //
 
 #include "roster.hpp"
+#include "student.hpp"
+#include "./degree.h"
 #include <string>
 using namespace std;
 
@@ -18,7 +20,9 @@ const string studentData[] =
     "A5,Luis,Vegerano,louie1598@gmail.com,37,33, 20,32,SOFTWARE"
 };
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degree){
+
+//Method to add student and parse
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degreeProgram){
     //Days in Course sub-array
     int* daysInCourse = new int [3];
     //Assign 3 values for this array
@@ -26,6 +30,18 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     daysInCourse[1] = dCourse2;
     daysInCourse[2] = dCourse3;
     
-    
+    if(degreeProgram == DegreeProgram::SECURITY){
+        ClassRosterArray[addingIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
+    }
+    else if (degreeProgram == DegreeProgram::NETWORK){
+        ClassRosterArray[addingIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
+    }
+    else if (degreeProgram == DegreeProgram::SOFTWARE){
+        ClassRosterArray[addingIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
+    }
+}
+
+//Removing Student
+void Roster::removeStudent(string studentID){
     
 }
