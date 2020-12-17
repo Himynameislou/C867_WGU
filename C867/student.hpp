@@ -18,6 +18,19 @@ using namespace std;
 
 
 class Student {
+    
+public:
+    const static int daysInCourseArraySize = 3;
+    
+private:
+    string studentID;
+    string firstName;
+    string lastName;
+    string email;
+    int age;
+    int* daysToComplete[daysInCourseArraySize];
+    DegreeProgram degreeP;
+    
 public:
     Student(); //Default Constructor
     
@@ -31,6 +44,9 @@ public:
             int* days,
             DegreeProgram degreeProgram
             );
+    
+    //Deconstructor
+    ~Student();
     
     //Setters
     void setStudentId(string studentID);
@@ -55,17 +71,7 @@ public:
     virtual DegreeProgram getDegreeProgram();
     
     
-    //Deconstructor
-    ~Student();
     
-private:
-    string studentID;
-    string firstName;
-    string lastName;
-    string email;
-    int age;
-    int* daysToComplete;
-    DegreeProgram degreeP;
 };
 
 #endif /* student_hpp */
