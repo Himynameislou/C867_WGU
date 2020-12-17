@@ -29,9 +29,17 @@ public:
             string email,
             int age,
             int* days,
-            DegreeProgram
+            DegreeProgram degreeProgram
             );
     
+    //Setters
+    void setStudentId(string studentID);
+    void setFirstName(string firstName);
+    void setLastName(string lastName);
+    void setEmail(string email);
+    void setAge(int age);
+    void setDaysCourse(int* days);
+    void setDegreeProgram(DegreeProgram);
     
     //Getters
     string getStudentId();
@@ -41,14 +49,6 @@ public:
     int getAge();
     int* getNumberDays();
     
-    //Setters
-    void setStudentId(string studentID);
-    void setFirstName(string firstName);
-    void setLastName(string lastName);
-    void setEmail(string email);
-    void setAge(int age);
-    void setDaysCourse(int d0, int d1, int d2);
-    void setDegreeProgram(DegreeProgram);
     
     //Print and Degree functions
     void print();
@@ -64,7 +64,7 @@ private:
     string lastName;
     string email;
     int age;
-    int numberDaysPerClass[3];
+    int* daysToComplete;
     DegreeProgram degreeP;
 };
 
