@@ -32,30 +32,6 @@ Student::Student(
     daysToComplete = daysCourse;
     setDegreeProgram(degree);
 }
-//Setters
-void Student::setStudentId(string studenID){
-    Student::studentID = studenID;
-}
-void Student::setFirstName(string fName){
-    Student::firstName = fName;
-}
-void Student::setLastName(string lName){
-    Student::lastName = lName;
-}
-void Student::setEmail(string email){
-    Student::email = email;
-}
-void Student::setAge(int age){
-    Student::age = age;
-}
-void Student::setDaysCourse(int* days){
-    for (int i = 0; i < 3; i++){
-        daysToComplete[i] = days[i];
-    }
-}
-void Student::setDegreeProgram(DegreeProgram degree){
-    degreeP = degree;
-}
 
 //Getters
 string Student::getStudentId(){
@@ -81,7 +57,31 @@ DegreeProgram Student::getDegreeProgram(){
     return degreeP;
 }
 
-//Print / Deconstruct
+//Setters
+void Student::setStudentId(string studenID){
+    Student::studentID = studenID;
+}
+void Student::setFirstName(string fName){
+    Student::firstName = fName;
+}
+void Student::setLastName(string lName){
+    Student::lastName = lName;
+}
+void Student::setEmail(string email){
+    Student::email = email;
+}
+void Student::setAge(int age){
+    Student::age = age;
+}
+void Student::setDaysCourse(int* days){
+    for (int i = 0; i < 3; i++){
+        daysToComplete[i] = days[i];
+    }
+}
+void Student::setDegreeProgram(DegreeProgram degree){
+    degreeP = degree;
+}
+
 void Student::print(){
     
 }
