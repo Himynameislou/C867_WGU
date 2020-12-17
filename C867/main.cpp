@@ -6,6 +6,11 @@
 //
 
 #include <iostream>
+#include "./student.hpp"
+#include "./roster.hpp"
+#include "./degree.h"
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
