@@ -56,3 +56,10 @@ void Roster::removeStudent(string studentID){
     }
     cout << "Student: " << studentID << " not found." << endl;
 }
+
+//Print
+void Roster::pringAll(){
+    for (int i = 0; i < 5; i++) {
+        ClassRosterArray[i]->print();
+    }
+}

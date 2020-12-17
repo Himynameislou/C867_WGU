@@ -12,8 +12,10 @@
 
 using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-}
+int main() {
+    
+    Student stud1;
+    Roster ros1;
+    ros1.pringAll();
+    
+};
