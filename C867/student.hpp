@@ -29,7 +29,7 @@ private:
     string lastName;
     string email;
     int age;
-    int* daysToComplete[daysInCourseArrSize];
+    int daysToComplete[daysInCourseArrSize];
     DegreeProgram degreeP;
     
 public:
@@ -42,7 +42,7 @@ public:
             string lastName,
             string email,
             int age,
-            int* daysToComplete[],
+            int daysToComplete[],
             DegreeProgram degreeProgram
             );
     
@@ -56,6 +56,7 @@ public:
     string getEmail();
     int getAge();
     int* getNumberDays();
+    DegreeProgram getDegreeProgram();
     
     //Setters
     void setStudentId(string studentID);
@@ -63,12 +64,12 @@ public:
     void setLastName(string lastName);
     void setEmail(string email);
     void setAge(int age);
-    void setDaysCourse(int* daysToComplete[]);
+    void setDaysCourse(int daysToComplete[]);
     void setDegreeProgram(DegreeProgram dp);
     
     //Print Methods
     static void printFormatHeader();  //Organizes Data Visually
-    void print(); 
+    void print();
 };
 
 #endif /* student_hpp */

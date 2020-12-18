@@ -30,7 +30,7 @@ Student::Student(
                  string lName,
                  string email,
                  int age,
-                 int* daysToComplete[],
+                 int daysToComplete[],
                  DegreeProgram degree)
 {
     studentID = studenID;
@@ -57,13 +57,13 @@ string Student::getLastName(){
     return lastName;
 }
 string Student::getEmail(){
-    return email;
+    return this->email;
 }
 int Student::getAge(){
-    return age;
+    return this->age;
 }
 int* Student::getNumberDays(){
-    return daysToComplete;
+    return this->daysToComplete;
 }
 //insert degree program getter
 DegreeProgram Student::getDegreeProgram(){
@@ -72,30 +72,46 @@ DegreeProgram Student::getDegreeProgram(){
 
 //Setters
 void Student::setStudentId(string studenID){
-    Student::studentID = studenID;
+    this->studentID = studenID;
 }
 void Student::setFirstName(string fName){
-    Student::firstName = fName;
+    this->firstName = fName;
 }
 void Student::setLastName(string lName){
-    Student::lastName = lName;
+    this->lastName = lName;
 }
 void Student::setEmail(string email){
-    Student::email = email;
+    this->email = email;
 }
 void Student::setAge(int age){
-    Student::age = age;
+    this->age = age;
 }
-void Student::setDaysCourse(int* days){
-    for (int i = 0; i < 3; i++){
-        daysToComplete[i] = days[i];
+void Student::setDaysCourse(int daysToComplete[]){
+    for (int i = 0; i < daysInCourseArrSize; i++) {
+        this->daysToComplete[i] = daysToComplete[i];
     }
 }
 void Student::setDegreeProgram(DegreeProgram degree){
-    degreeP = degree;
+    this->degreeP = degree;
 }
 
+//Print Methods
+
+//Header
+void Student::printFormatHeader(){
+    cout << "Student Format: Student ID || First Name || Last Name || Email || Age || Days In Courses || Degree Type\n";
+}
+
+//Print
 void Student::print(){
-    
+    cout << this->getStudentId() << '\t';
+    cout << this->getFirstName() << '\t';
+    cout << this->getLastName() << '\t';
+    cout << this->getEmail() << '\t';
+    cout << this->getAge() << '\t';
+    cout << this->getNumberDays()[0] << ',';
+    cout << this->getNumberDays()[1] << ',';
+    cout << this->getNumberDays()[2] << '\t';
+    cout << degreeString[this->getDegreeProgram()] << endl;
 }
 
