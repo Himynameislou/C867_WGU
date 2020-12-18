@@ -9,8 +9,8 @@
 #define roster_hpp
 #include <array>
 #include <stdio.h>
-#include "./student.hpp"
-#include "./degree.h"
+#include "student.hpp"
+#include "degree.h"
 using namespace std;
 
 class Roster {

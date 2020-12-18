@@ -7,7 +7,7 @@
 
 #include "roster.hpp"
 #include "student.hpp"
-#include "./degree.h"
+#include "degree.h"
 #include <string>
 #include <iostream>
 using namespace std;
