@@ -19,6 +19,7 @@ using namespace std;
 
 
 class Student {
+    
 public:
     const static int daysInCourseArrSize = 3;
     
@@ -62,12 +63,12 @@ public:
     void setLastName(string lastName);
     void setEmail(string email);
     void setAge(int age);
-    void setDaysCourse(int* days);
-    void setDegreeProgram(DegreeProgram);
+    void setDaysCourse(int* daysToComplete[]);
+    void setDegreeProgram(DegreeProgram dp);
     
-    //Print and Degree functions
-    void print();
-    virtual DegreeProgram getDegreeProgram();
+    //Print Methods
+    static void printFormatHeader();  //Organizes Data Visually
+    void print(); 
 };
 
 #endif /* student_hpp */
