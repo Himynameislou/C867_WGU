@@ -12,12 +12,25 @@
 // Include CString Library
 #include <string>
 // Include Degree Header File
-#include "./degree.h"
+#include "degree.h"
+#include <iomanip>
 
 using namespace std;
 
 
 class Student {
+public:
+    const static int daysInCourseArrSize = 3;
+    
+private:
+    string studentID;
+    string firstName;
+    string lastName;
+    string email;
+    int age;
+    int* daysToComplete[daysInCourseArrSize];
+    DegreeProgram degreeP;
+    
 public:
     Student(); //Default Constructor
     
@@ -28,9 +41,20 @@ public:
             string lastName,
             string email,
             int age,
-            int* days,
+            int* daysToComplete[],
             DegreeProgram degreeProgram
             );
+    
+    //Deconstructor
+    ~Student();
+    
+    //Getters
+    string getStudentId();
+    string getFirstName();
+    string getLastName();
+    string getEmail();
+    int getAge();
+    int* getNumberDays();
     
     //Setters
     void setStudentId(string studentID);
@@ -41,31 +65,9 @@ public:
     void setDaysCourse(int* days);
     void setDegreeProgram(DegreeProgram);
     
-    //Getters
-    string getStudentId();
-    string getFirstName();
-    string getLastName();
-    string getEmail();
-    int getAge();
-    int* getNumberDays();
-    
-    
     //Print and Degree functions
     void print();
     virtual DegreeProgram getDegreeProgram();
-    
-    
-    //Deconstructor
-    ~Student();
-    
-private:
-    string studentID;
-    string firstName;
-    string lastName;
-    string email;
-    int age;
-    int* daysToComplete;
-    DegreeProgram degreeP;
 };
 
 #endif /* student_hpp */
