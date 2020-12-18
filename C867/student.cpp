@@ -6,13 +6,22 @@
 //
 
 #include "student.hpp"
+#include "degree.h"
 #include <iostream>
-#include "./degree.h"
 #include <string>
 
 using namespace std;
 
 Student::Student(){
+    this->studentID = "";
+    this->firstName = "";
+    this->lastName = "";
+    this->email = "";
+    this->age = 0;
+    for (int i =0; i < daysInCourseArrSize; i++) {
+        this->daysToComplete[i] = 0;
+    }
+    this->degreeP = DegreeProgram::SECURITY;
 }
 
 Student::Student(
@@ -21,17 +30,21 @@ Student::Student(
                  string lName,
                  string email,
                  int age,
-                 int* daysCourse,
-                 enum DegreeProgram degree)
+                 int* daysToComplete[],
+                 DegreeProgram degree)
 {
     studentID = studenID;
     firstName = fName;
     lastName = lName;
-    email = email;
-    age = age;
-    daysToComplete = daysCourse;
-    setDegreeProgram(degree);
+    this->email = email;
+    this->age = age;
+    for (int i =0; i < daysInCourseArrSize; i++) {
+        this->daysToComplete[i] = daysToComplete[i];
+    }
+    this->degreeP = degree;
 }
+
+Student::~Student(){} //deconstructor
 
 //Getters
 string Student::getStudentId(){
@@ -86,6 +99,3 @@ void Student::print(){
     
 }
 
-Student::~Student(){
-    
-}
