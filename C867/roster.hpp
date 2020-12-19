@@ -22,7 +22,7 @@ private:
     Student* ClassRosterArray[numStudents];
     
 public:
-    Roster(); //Default constructor for Roster
+    //Roster(); //Default constructor for Roster
     void parser(string row); //Will be used to parse data properly into row
     
     // Setting Instance Variables from part D1

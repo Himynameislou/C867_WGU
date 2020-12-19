@@ -99,7 +99,7 @@ void Student::setDegreeProgram(DegreeProgram degree){
 
 //Header
 void Student::printFormatHeader(){
-    cout << "Student Format: Student ID || First Name || Last Name || Email || Age || Days In Courses || Degree Type\n";
+    cout << "Student ID|First Name|Last Name|Email|Age|Days In Courses|Degree Type\n";
 }
 
 //Print

@@ -6,13 +6,14 @@
 //
 
 #include <iostream>
-#include "./student.hpp"
-#include "./roster.hpp"
-#include "./degree.h"
+#include "student.hpp"
+#include "roster.hpp"
+#include "degree.h"
 
 using namespace std;
 
 int main() {
+    Roster Roster;
     //String to Parse
     const string studentData[] =
     {
@@ -22,4 +23,44 @@ int main() {
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Luis,Vegerano,louie1598@gmail.com,37,33, 20,32,SOFTWARE"
     };
+    
+    const int numStud = 5;
+    
+    /* Parsing and displaying all students in roster */
+    cout<< "Displaying all students: " << endl;
+    for (int i = 0; i < numStud; i++) {
+        Roster.parser(studentData[i]);
+    }
+    Roster.pringAll();
+    cout << endl;
+    
+    /* Displaying students by degree type instead of ID*/
+    for (int i = 0; i < 3; i++) {
+        cout << "Displaying by degree type: " << degreeString[i] << endl;
+        Roster.printByDegreeProgram((DegreeProgram)i);
+    }
+    //Displaying Invalid IDs
+    cout << "Displaying students with invalid emails" << endl;
+    Roster.printInvalidEmails();
+    cout << endl;
+    
+    //Displaying average Days in Course by student
+    cout << "Displaying average days in course: " << endl;
+    Roster.printAverageDaysInCourse(studentData[4]);
+    
+    /* First removes student and then runs again to validate student was removed*/
+    
+    //Removing student ID A3
+    cout << "Removing student with ID - A3" << endl;
+    Roster.removeStudent("A3");
+    cout << endl;
+    
+    //Runs again to show student was removed
+    cout << "Removing student with ID - A3" << endl;
+    Roster.removeStudent("A3");
+    cout << endl;
+    
+    system("pause");
+    return 0;
+    
 };
