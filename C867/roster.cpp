@@ -17,7 +17,7 @@ using namespace std;
 Roster Roster();
 
 void Roster::parser(string studentData){
-    DegreeProgram degPro = SOFTWARE;
+    DegreeProgram degPro = SECURITY;
     if (studentData.at(8) == NETWORK) {
         degPro = NETWORK;
     }
@@ -70,7 +70,6 @@ void Roster::pringAll(){
         cout << ClassRosterArray[i]->getFirstName(); cout << '\t';
         cout << ClassRosterArray[i]->getLastName(); cout << '\t';
         cout << ClassRosterArray[i]->getEmail(); cout << '\t';
-        cout << ClassRosterArray[i]->getAge(); cout << '\t';
         cout << ClassRosterArray[i]->getNumberDays()[0]; cout << '\t';
         cout << ClassRosterArray[i]->getNumberDays()[1]; cout << '\t';
         cout << ClassRosterArray[i]->getNumberDays()[2]; cout << '\t';
