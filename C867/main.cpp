@@ -13,6 +13,14 @@
 using namespace std;
 
 int main() {
+    cout << "C867 - Scripting & Programming; Applications" << endl;
+    cout << "Language: C++" << endl;
+    cout << "Student ID: 001459305" << endl;
+    cout << "Luis Vegerano" << endl;
+    cout << endl;
+  
+    
+    
     Roster Roster;
     //String to Parse
     const string studentData[] =
