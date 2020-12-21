@@ -22,7 +22,7 @@ int main() {
     
     
     Roster Roster;
-    //String to Parse
+//String to Parse
     const string studentData[] =
     {
         "S,A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
@@ -34,7 +34,7 @@ int main() {
     
     const int numStud = 5;
     
-    /* Parsing and displaying all students in roster */
+/* Parsing and displaying all students in roster */
     cout<< "Displaying all students: " << endl;
     for (int i = 0; i < numStud; i++) {
         Roster.parser(studentData[i]);
@@ -42,36 +42,30 @@ int main() {
     Roster.pringAll();
     cout << endl;
     
-    /* Displaying students by degree type instead of ID*/
-    for (int i = 0; i < 3; i++) {
-        cout << "Displaying by degree type: " << degreeString[i] << endl;
-        Roster.printByDegreeProgram((DegreeProgram)i);
-    }
-    //Displaying Invalid IDs
-    cout << "Displaying students with invalid emails" << endl;
+//Displaying Invalid Emails
+    cout << "Displaying students with invalid emails:" << endl;
     Roster.printInvalidEmails();
     cout << endl;
     
-    //Displaying average Days in Course by student
+//Displaying average Days in Course by student
     cout << "Displaying average days in course: " << endl;
     Roster.printAverageDaysInCourse(studentData[4]);
     
-    /* First removes student and then runs again to validate student was removed*/
+//Degree Type
+    cout << "Displaying by degree type: " << degreeString[2] << endl;
+    Roster.printByDegreeProgram((DegreeProgram)2);
+   
+
+/* First removes student and then runs again to validate student was removed */
     
-    //Removing student ID A3
+//Removing student ID A3
     cout << "Removing student with ID - A3" << endl;
     Roster.removeStudent("A3");
     cout << endl;
     
-    //Runs again to show student was removed
+//Runs again to show student was removed
     cout << "Removing student with ID - A3" << endl;
     Roster.removeStudent("A3");
     cout << endl;
-    
-    
-    
-    
-    system("pause");
-    return 0;
     
 };

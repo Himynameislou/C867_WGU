@@ -104,14 +104,14 @@ void Student::printFormatHeader(){
 
 //Print
 void Student::print(){
-    cout << this->getStudentId() << '\t';
-    cout << this->getFirstName() << '\t';
-    cout << this->getLastName() << '\t';
-    cout << this->getEmail() << '\t';
-    cout << this->getAge() << '\t';
-    cout << this->getNumberDays()[0] << ',';
+    cout << "First Name: " << this->getStudentId() << '\t'<< '\t';
+    cout << "First Name: " << this->getFirstName() << '\t'<< '\t';
+    cout << "Last Name: "<< this->getLastName() << '\t'<< '\t';
+    cout <<"Email :"<< this->getEmail() << '\t'<< '\t'<< '\t'<< '\t';
+    cout <<"Age: "<< this->getAge() << '\t'<< '\t'<< '\t';
+    cout << "Days in Course: {" << this->getNumberDays()[0] << ',';
     cout << this->getNumberDays()[1] << ',';
-    cout << this->getNumberDays()[2] << '\t';
-    cout << degreeString[this->getDegreeProgram()] << endl;
+    cout << this->getNumberDays()[2] << "}" <<'\t'<< '\t'<< '\t';
+    cout <<"Degree: "<< degreeString[this->getDegreeProgram()] << endl;
 }
 
