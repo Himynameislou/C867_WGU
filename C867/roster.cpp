@@ -27,11 +27,11 @@ void Roster::parser(string studentData){
         }
     
     //
-    char rhs = studentData.find(",");
+    char rhs = studentData.find(","); //This starts parsing at the code letter I inserted
     string code = studentData.substr(0, rhs);
     
     int lhs = rhs + 1;
-    rhs = studentData.find(",", lhs);  //May have to change type from char to int if this doesnt work.  Int Rhs gave warning for every instance
+    rhs = studentData.find(",", lhs);  
     string stuID = studentData.substr(lhs, rhs - lhs);  //Student ID
     
     lhs = rhs + 1;
