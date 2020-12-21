@@ -28,7 +28,7 @@ public:
     // Setting Instance Variables from part D1
     //Adding student data into Roster
     void add(
-             string code, // remove later if doesnt work
+              
              string sID,
              string fN,
              string lN,

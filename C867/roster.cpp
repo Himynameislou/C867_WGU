@@ -27,10 +27,14 @@ void Roster::parser(string studentData){
         }
     
     //
-    char rhs = studentData.find(",");  //May have to change type from char to int if this doesnt work.  Int Rhs gave warning for every instance
-    string stuID = studentData.substr(0, rhs);
+    char rhs = studentData.find(",");
+    string code = studentData.substr(0, rhs);
     
     int lhs = rhs + 1;
+    rhs = studentData.find(",", lhs);  //May have to change type from char to int if this doesnt work.  Int Rhs gave warning for every instance
+    string stuID = studentData.substr(lhs, rhs - lhs);  //Student ID
+    
+    lhs = rhs + 1;
     rhs = studentData.find(",", lhs);
     string firstNM = studentData.substr(lhs, rhs - lhs); //first name
     
@@ -60,7 +64,7 @@ void Roster::parser(string studentData){
 
     
     
-    add(code,stuID, firstNM, lastNM, emAdd, ageStu, d1, d2, d3, degPro);
+    add(stuID, firstNM, lastNM, emAdd, ageStu, d1, d2, d3, degPro);
 }
 
 void Roster::add(string sID, string fN, string lN, string eAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degPro){
