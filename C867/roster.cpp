@@ -15,15 +15,18 @@
 using namespace std;
 
 Roster Roster();
-
+DegreeProgram degPro;
 void Roster::parser(string studentData){
+    //
     DegreeProgram degPro = SECURITY;
-    if (studentData.at(8) == NETWORK) {
-        degPro = NETWORK;
-    }
-    else if (studentData.at(8) == SOFTWARE){
-        degPro = SOFTWARE;
-    }
+        if (studentData.at(0) == 'N') {
+            degPro = NETWORK;
+        }
+        else if (studentData.at(0) == 'J'){
+            degPro = SOFTWARE;
+        }
+    
+    //
     char rhs = studentData.find(",");  //May have to change type from char to int if this doesnt work.  Int Rhs gave warning for every instance
     string stuID = studentData.substr(0, rhs);
     
@@ -54,8 +57,10 @@ void Roster::parser(string studentData){
     lhs = rhs + 1;
     rhs = studentData.find(",", lhs);
     int d3 = stoi(studentData.substr(lhs, rhs - lhs)); //Days 3
+
     
-    add(stuID, firstNM, lastNM, emAdd, ageStu, d1, d2, d3, degPro);
+    
+    add(code,stuID, firstNM, lastNM, emAdd, ageStu, d1, d2, d3, degPro);
 }
 
 void Roster::add(string sID, string fN, string lN, string eAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degPro){
@@ -70,6 +75,7 @@ void Roster::pringAll(){
         cout << ClassRosterArray[i]->getFirstName(); cout << '\t';
         cout << ClassRosterArray[i]->getLastName(); cout << '\t';
         cout << ClassRosterArray[i]->getEmail(); cout << '\t';
+        cout << ClassRosterArray[i]->getAge(); cout << '\t';
         cout << ClassRosterArray[i]->getNumberDays()[0]; cout << '\t';
         cout << ClassRosterArray[i]->getNumberDays()[1]; cout << '\t';
         cout << ClassRosterArray[i]->getNumberDays()[2]; cout << '\t';
