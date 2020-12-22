@@ -99,12 +99,12 @@ void Student::setDegreeProgram(DegreeProgram degree){
 
 //Header
 void Student::printFormatHeader(){
-    cout << "Student Format: Student ID || First Name || Last Name || Email || Age || Days In Courses || Degree Type\n";
+    cout << "Header Format: Student ID || First Name || Last Name || Email || Age || Days In Courses || Degree Type\n";
 }
 
 //Print
 void Student::print(){
-    cout << "First Name: " << this->getStudentId() << '\t'<< '\t';
+    cout << "Student ID: " << this->getStudentId() << '\t'<< '\t';
     cout << "First Name: " << this->getFirstName() << '\t'<< '\t';
     cout << "Last Name: "<< this->getLastName() << '\t'<< '\t';
     cout <<"Email :"<< this->getEmail() << '\t'<< '\t'<< '\t'<< '\t';

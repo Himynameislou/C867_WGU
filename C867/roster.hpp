@@ -19,7 +19,7 @@ private:
     int lastEntry = -1; //Used to loop over STUDENTS when adding to Roster
     //Array for Roster
     static const int numStudents = 5;
-    Student* ClassRosterArray[numStudents];
+    Student* classRosterArray[numStudents];
     
 public:
     //Roster(); //Default constructor for Roster

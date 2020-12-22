@@ -76,29 +76,29 @@ void Roster::parser(string studentData){
 
 void Roster::add(string sID, string fN, string lN, string eAddress, int age, int dCourse1, int dCourse2, int dCourse3, DegreeProgram degPro){
     int daysArr[3] = {dCourse1, dCourse2, dCourse3};
-    ClassRosterArray[++lastEntry] = new Student(sID, fN, lN, eAddress, age, daysArr, degPro);
+    classRosterArray[++lastEntry] = new Student(sID, fN, lN, eAddress, age, daysArr, degPro);
 }
 
 void Roster::pringAll(){
     Student::printFormatHeader();
     for (int i = 0; i <= Roster::lastEntry; i++) {
-        cout << ClassRosterArray[i]->getStudentId(); cout << '\t'<< '\t';
-        cout << "First Name: " << ClassRosterArray[i]->getFirstName(); cout << '\t'<< '\t';
-        cout << "Last Name: " << ClassRosterArray[i]->getLastName(); cout << '\t'<< '\t';
-        cout << "Email: " << ClassRosterArray[i]->getEmail(); cout << '\t'<< '\t'<< '\t'<< '\t';
-        cout << "Age: " << ClassRosterArray[i]->getAge(); cout << '\t'<< '\t'<< '\t';
-        cout << "Days in Course: {" << ClassRosterArray[i]->getNumberDays()[0]; cout << ",";
-        cout << ClassRosterArray[i]->getNumberDays()[1]; cout << ",";
-        cout << ClassRosterArray[i]->getNumberDays()[2]; cout << "}" << '\t'<< '\t'<< '\t';
-        cout << "Degree: " << degreeString[ClassRosterArray[i]->getDegreeProgram()] << endl;
+        cout << "Student ID: " << classRosterArray[i]->getStudentId(); cout << '\t'<< '\t';
+        cout << "First Name: " << classRosterArray[i]->getFirstName(); cout << '\t'<< '\t';
+        cout << "Last Name: " << classRosterArray[i]->getLastName(); cout << '\t'<< '\t';
+        cout << "Email: " << classRosterArray[i]->getEmail(); cout << '\t'<< '\t'<< '\t'<< '\t';
+        cout << "Age: " << classRosterArray[i]->getAge(); cout << '\t'<< '\t'<< '\t';
+        cout << "Days in Course: {" << classRosterArray[i]->getNumberDays()[0]; cout << ",";
+        cout << classRosterArray[i]->getNumberDays()[1]; cout << ",";
+        cout << classRosterArray[i]->getNumberDays()[2]; cout << "}" << '\t'<< '\t'<< '\t';
+        cout << "Degree: " << degreeString[classRosterArray[i]->getDegreeProgram()] << endl;
     }
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degPro){
     Student::printFormatHeader();
     for (int i = 0; i <= Roster::lastEntry; i++) {
-        if (Roster::ClassRosterArray[i]->getDegreeProgram() == degPro) {
-            ClassRosterArray[i]->print();
+        if (Roster::classRosterArray[i]->getDegreeProgram() == degPro) {
+            classRosterArray[i]->print();
         }
     }
     cout << endl;
@@ -108,14 +108,14 @@ void Roster::printByDegreeProgram(DegreeProgram degPro){
 void Roster::printInvalidEmails(){
     bool valid = false;
     for (int i =0; i <= Roster::lastEntry; i++) {
-        string emailValidator = (ClassRosterArray[i]->getEmail());
+        string emailValidator = (classRosterArray[i]->getEmail());
         if (emailValidator.find('@') == string::npos || (emailValidator.find('.') == string::npos)) {
             valid = true;
-            cout << emailValidator << ": " << ClassRosterArray[i]->getEmail() << endl;
+            cout << emailValidator << ": " << classRosterArray[i]->getEmail() << endl;
         }
         else if (emailValidator.find(' ') != string::npos){
             valid = true;
-            cout << emailValidator << ": " << ClassRosterArray[i]->getEmail() << endl;
+            cout << emailValidator << ": " << classRosterArray[i]->getEmail() << endl;
         }
         if (!valid) {
             cout << "NONE" << endl;
@@ -125,8 +125,8 @@ void Roster::printInvalidEmails(){
 
 void Roster::printAverageDaysInCourse(string studenId){
     for (int i = 0; i <= Roster::lastEntry; i++) {
-        cout <<"Student ID: "<< ClassRosterArray[i]->getStudentId() << ", averages ";
-        cout << (ClassRosterArray[i]->getNumberDays()[0] + ClassRosterArray[i]->getNumberDays()[1] + ClassRosterArray[i]->getNumberDays()[2])/3 << " days in a course." <<endl;
+        cout <<"Student ID: "<< classRosterArray[i]->getStudentId() << ", averages ";
+        cout << (classRosterArray[i]->getNumberDays()[0] + classRosterArray[i]->getNumberDays()[1] + classRosterArray[i]->getNumberDays()[2])/3 << " days in a course." <<endl;
     }
     cout << endl;
 }
@@ -134,12 +134,12 @@ void Roster::printAverageDaysInCourse(string studenId){
 void Roster::removeStudent(string sID){
     bool found = false;
     for (int i = 0; i <= Roster::lastEntry; i++) {
-        if (ClassRosterArray[i]->getStudentId() == sID) {
+        if (classRosterArray[i]->getStudentId() == sID) {
             found = true;
             if (i < numStudents - 1) {
-                Student* temp = ClassRosterArray[i];
-                ClassRosterArray[i] = ClassRosterArray[numStudents - 1];
-                ClassRosterArray[numStudents - 1] = temp;
+                Student* temp = classRosterArray[i];
+                classRosterArray[i] = classRosterArray[numStudents - 1];
+                classRosterArray[numStudents - 1] = temp;
             }
             Roster::lastEntry--;
         }
@@ -155,7 +155,7 @@ Roster::~Roster(){
     
     for (int i = 0; i < numStudents; i++) {
         cout << "Destroying student #" << i + 1 << endl;
-        delete ClassRosterArray[i];
-        ClassRosterArray[i] = nullptr;
+        delete classRosterArray[i];
+        classRosterArray[i] = nullptr;
     }
 }
