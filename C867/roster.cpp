@@ -19,23 +19,23 @@ DegreeProgram degPro;
 void Roster::parser(string studentData){
 //Setting Degree output of Degree Type based off Code Letter Inserted
     DegreeProgram degPro = SECURITY;
-        if (studentData.at(0) == 'N') {
+        if (studentData.back() == 'K') {
             degPro = NETWORK;
         }
-        else if (studentData.at(0) == 'J'){
+        else if (studentData.back() == 'E'){
             degPro = SOFTWARE;
         }
 //This starts parsing at the code letter I inserted
-    char rhs = studentData.find(",");
-    string code = studentData.substr(0, rhs);
+    //char rhs = studentData.find(",");
+    //string code = studentData.substr(0, rhs);
     
 //Student ID
-    int lhs = rhs + 1;
-    rhs = studentData.find(",", lhs);  
-    string stuID = studentData.substr(lhs, rhs - lhs);
+    char rhs = studentData.find(",");
+      
+    string stuID = studentData.substr(0, rhs);
     
 //first name
-    lhs = rhs + 1;
+    int lhs = rhs + 1;
     rhs = studentData.find(",", lhs);
     string firstNM = studentData.substr(lhs, rhs - lhs);
     
