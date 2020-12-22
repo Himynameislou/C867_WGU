@@ -79,9 +79,12 @@ void Roster::add(string sID, string fN, string lN, string eAddress, int age, int
     classRosterArray[++lastEntry] = new Student(sID, fN, lN, eAddress, age, daysArr, degPro);
 }
 
-void Roster::pringAll(){
+void Roster::printAll(){
     Student::printFormatHeader();
     for (int i = 0; i <= Roster::lastEntry; i++) {
+        classRosterArray[i]->print();
+        //Student::print(classRosterArray[i]->getStudentId());
+        /*
         cout << "Student ID: " << classRosterArray[i]->getStudentId(); cout << '\t'<< '\t';
         cout << "First Name: " << classRosterArray[i]->getFirstName(); cout << '\t'<< '\t';
         cout << "Last Name: " << classRosterArray[i]->getLastName(); cout << '\t'<< '\t';
@@ -90,7 +93,7 @@ void Roster::pringAll(){
         cout << "Days in Course: {" << classRosterArray[i]->getNumberDays()[0]; cout << ",";
         cout << classRosterArray[i]->getNumberDays()[1]; cout << ",";
         cout << classRosterArray[i]->getNumberDays()[2]; cout << "}" << '\t'<< '\t'<< '\t';
-        cout << "Degree: " << degreeString[classRosterArray[i]->getDegreeProgram()] << endl;
+        cout << "Degree: " << degreeString[classRosterArray[i]->getDegreeProgram()] << endl; */
     }
 }
 
@@ -146,7 +149,7 @@ void Roster::removeStudent(string sID){
     }
     if (found) {
         cout << sID << " removed from roster." << endl << endl;
-        this->pringAll(); //Removed Student will not display
+        this->printAll(); //Removed Student will not display
     }
     else cout << sID << " not found." << endl;
 }

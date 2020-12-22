@@ -38,7 +38,7 @@ public:
              int dCourse2,
              int dCourse3,
              DegreeProgram degPro);
-    void pringAll();
+    void printAll();
     void printByDegreeProgram(DegreeProgram degPro);
     void printInvalidEmails();
     void printAverageDaysInCourse(string studentID);

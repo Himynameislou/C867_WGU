@@ -39,7 +39,7 @@ int main() {
     for (int i = 0; i < numStud; i++) {
         Roster.parser(studentData[i]);
     }
-    Roster.pringAll();
+    Roster.printAll();
     cout << endl;
     
 //Displaying Invalid Emails
