@@ -21,7 +21,7 @@ int main() {
   
     
     
-    Roster Roster;
+    Roster classRoster; //classRoster instance
 //String to Parse
     const string studentData[] =
     {
@@ -37,35 +37,35 @@ int main() {
 /* Parsing and displaying all students in roster */
     cout<< "Displaying all students: " << endl;
     for (int i = 0; i < numStud; i++) {
-        Roster.parser(studentData[i]);
+        classRoster.parser(studentData[i]);
     }
-    Roster.printAll();
+    classRoster.printAll();
     cout << endl;
     
 //Displaying Invalid Emails
     cout << "Displaying students with invalid emails:" << endl;
-    Roster.printInvalidEmails();
+    classRoster.printInvalidEmails();
     cout << endl;
     
 //Displaying average Days in Course by student
     cout << "Displaying average days in course: " << endl;
-    Roster.printAverageDaysInCourse(studentData[4]);
+    classRoster.printAverageDaysInCourse(studentData[4]);
     
 //Degree Type
     cout << "Displaying by degree type: " << degreeString[2] << endl;
-    Roster.printByDegreeProgram((DegreeProgram)2);
+    classRoster.printByDegreeProgram((DegreeProgram)2);
    
 
 /* First removes student and then runs again to validate student was removed */
     
 //Removing student ID A3
     cout << "Removing student with ID - A3" << endl;
-    Roster.removeStudent("A3");
+    classRoster.removeStudent("A3");
     cout << endl;
     
 //Runs again to show student was removed
     cout << "Removing student with ID - A3" << endl;
-    Roster.removeStudent("A3");
+    classRoster.removeStudent("A3");
     cout << endl;
     
 };

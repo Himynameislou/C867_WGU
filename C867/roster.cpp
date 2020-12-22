@@ -82,7 +82,9 @@ void Roster::add(string sID, string fN, string lN, string eAddress, int age, int
 void Roster::printAll(){
     Student::printFormatHeader();
     for (int i = 0; i <= Roster::lastEntry; i++) {
-        classRosterArray[i]->print();
+        
+        classRosterArray[i]->print(); //FIX Via Submission Comments
+        
         //Student::print(classRosterArray[i]->getStudentId());
         /*
         cout << "Student ID: " << classRosterArray[i]->getStudentId(); cout << '\t'<< '\t';
