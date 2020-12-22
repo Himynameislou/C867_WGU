@@ -104,7 +104,7 @@ void Student::printFormatHeader(){
 
 //Print
 void Student::print(){
-    cout << "Student ID: " << this->getStudentId() << '\t'<< '\t';
+    cout << "Student ID: " << this->getStudentId() << '\t'<< '\t'; //Fix for D2e comment
     cout << "First Name: " << this->getFirstName() << '\t'<< '\t';
     cout << "Last Name: "<< this->getLastName() << '\t'<< '\t';
     cout <<"Email :"<< this->getEmail() << '\t'<< '\t'<< '\t'<< '\t';
@@ -114,4 +114,3 @@ void Student::print(){
     cout << this->getNumberDays()[2] << "}" <<'\t'<< '\t'<< '\t';
     cout <<"Degree: "<< degreeString[this->getDegreeProgram()] << endl;
 }
-

@@ -19,6 +19,8 @@ private:
     int lastEntry = -1; //Used to loop over STUDENTS when adding to Roster
     //Array for Roster
     static const int numStudents = 5;
+    //Fix for E2 comment. E2a. E2b. E3a. E3b. E3d. E3e. E3f.
+    // Changed Class Name below from "ClassRosterArray" to "classRosterArray" to comply with Rubric.
     Student* classRosterArray[numStudents];
     
 public:

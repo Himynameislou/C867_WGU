@@ -20,10 +20,11 @@ int main() {
     cout << endl;
   
     
-    
+    //Fix for F2
     Roster classRoster; //classRoster instance
 //String to Parse
     const string studentData[] =
+    //Fix for E1 comment.  Removed the code identifiers I inserted in front of the student IDs.
     {
         "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -54,10 +55,8 @@ int main() {
 //Degree Type
     cout << "Displaying by degree type: " << degreeString[2] << endl;
     classRoster.printByDegreeProgram((DegreeProgram)2);
-   
 
 /* First removes student and then runs again to validate student was removed */
-    
 //Removing student ID A3
     cout << "Removing student with ID - A3" << endl;
     classRoster.removeStudent("A3");

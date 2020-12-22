@@ -17,7 +17,8 @@ using namespace std;
 Roster Roster();
 DegreeProgram degPro;
 void Roster::parser(string studentData){
-//Setting Degree output of Degree Type based off Code Letter Inserted
+//Setting Degree output of Degree Type based off last letter of DegreeProgram type in studentData table
+// Fix for E1 Comment
     DegreeProgram degPro = SECURITY;
         if (studentData.back() == 'K') {
             degPro = NETWORK;
@@ -25,9 +26,6 @@ void Roster::parser(string studentData){
         else if (studentData.back() == 'E'){
             degPro = SOFTWARE;
         }
-//This starts parsing at the code letter I inserted
-    //char rhs = studentData.find(",");
-    //string code = studentData.substr(0, rhs);
     
 //Student ID
     char rhs = studentData.find(",");
@@ -83,19 +81,8 @@ void Roster::printAll(){
     Student::printFormatHeader();
     for (int i = 0; i <= Roster::lastEntry; i++) {
         
-        classRosterArray[i]->print(); //FIX Via Submission Comments
-        
-        //Student::print(classRosterArray[i]->getStudentId());
-        /*
-        cout << "Student ID: " << classRosterArray[i]->getStudentId(); cout << '\t'<< '\t';
-        cout << "First Name: " << classRosterArray[i]->getFirstName(); cout << '\t'<< '\t';
-        cout << "Last Name: " << classRosterArray[i]->getLastName(); cout << '\t'<< '\t';
-        cout << "Email: " << classRosterArray[i]->getEmail(); cout << '\t'<< '\t'<< '\t'<< '\t';
-        cout << "Age: " << classRosterArray[i]->getAge(); cout << '\t'<< '\t'<< '\t';
-        cout << "Days in Course: {" << classRosterArray[i]->getNumberDays()[0]; cout << ",";
-        cout << classRosterArray[i]->getNumberDays()[1]; cout << ",";
-        cout << classRosterArray[i]->getNumberDays()[2]; cout << "}" << '\t'<< '\t'<< '\t';
-        cout << "Degree: " << degreeString[classRosterArray[i]->getDegreeProgram()] << endl; */
+        //Fix for E3c
+        classRosterArray[i]->print();
     }
 }
 
